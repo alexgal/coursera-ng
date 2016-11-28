@@ -18,13 +18,13 @@
         narrowCtrl.matchFood = function () {
             var promise = service.getMenuItems();
             promise.then(function (result) {
-                narrowCtrl.matches =
+                narrowCtrl.foundItems =
                     service.getMatchedMenuItems(result, narrowCtrl.criteria)
             });
         };
 
         narrowCtrl.removeItem = function(index) {
-            narrowCtrl.matches.splice(index, 1);
+            narrowCtrl.foundItems.matches.splice(index, 1);
         };
     }
 
@@ -64,7 +64,7 @@
             }
         /**
          * Performs http request in order to get menu items.
-         * Returns promise. 
+         * Returns promise.
          * @returns {*}
          */
         service.getMenuItems =
