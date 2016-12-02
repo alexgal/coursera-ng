@@ -1,0 +1,10 @@
+<div ng-repeat="item in $ctrl.items">
+    <hr>
+    <h3>{{item.name}}</h3>
+    <div><b>Description:</b></div>
+    <div>{{item.description}}</div>
+    <br>
+    <div ng-if="item.price_small">Price for small dish: {{item.price_small}}</div>
+    <div>Price for large dish: {{item.price_large}}</div>
+    <hr>
+</div>
