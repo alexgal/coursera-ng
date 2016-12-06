@@ -1,0 +1,60 @@
+<h2>My Info</h2>
+
+
+<div ng-if="myInfoCtrl.user == null">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>
+<div ng-if="myInfoCtrl.user != null">
+    <h3>User Details</h3>
+    <div class="row">
+        <div class="col-sm-5">
+          Firstname :
+        </div>
+        <div class="col-sm-7">
+            {{myInfoCtrl.user.firstname}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+          Lastname :
+        </div>
+        <div class="col-sm-7">
+            {{myInfoCtrl.user.lastname}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+          Email :
+        </div>
+        <div class="col-sm-7">
+            {{myInfoCtrl.user.email}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+          Phone :
+        </div>
+        <div class="col-sm-7">
+            {{myInfoCtrl.user.phone}}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-5">
+            <div>
+                <div>{{myInfoCtrl.favouriteDish.short_name}}</div>
+                <img
+                    class="img-responsive"
+                    width="250"
+                    height="150"
+                    ng-src="{{myInfoCtrl.imagePath}}"
+                    alt="{{myInfoCtrl.favouriteDish.name}}"
+                >
+            </div>
+        </div>
+        <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{myInfoCtrl.favouriteDish.name}}</h3>
+            <p class="menu-item-details">{{myInfoCtrl.favouriteDish.description}}</p>
+        </div>
+    </div>
+</div>
